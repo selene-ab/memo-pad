@@ -1,0 +1,84 @@
+<div class="lg:mx-12">
+  <button
+    mat-raised-button
+    class="bg-purple-500 text-white"
+    [routerLink]="['/home']"
+  >
+    Home
+  </button>
+  <div class="flex flex-row items-center gap-2 text-2xl font-semibold mt-12">
+    <span>Ajustes</span>
+    <mat-icon>build_circle</mat-icon>
+  </div>
+  <!-- Listado de categorias creadas -->
+  <div class="my-6">
+    <p class="text-lg underline">Categorias</p>
+    <div class="grid grid-cols-3 md:w-2/5">
+      <span
+        class="text-center inline-block rounded-full px-2 py-1 ml-1 text-xs font-bold mr-1 md:mr-2 mb-2 md:px-4 opacity-80 hover:opacity-100 cursor-default"
+        *ngFor="let label of labels"
+        [ngStyle]="{ color: label.text_color, background: label.color }"
+      >
+        {{ label.name }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Crear categorias -->
+  <div class="my-6">
+    <p class="text-lg underline">Crear categoria</p>
+    <form class="grid grid-cols-5 gap-6" [formGroup]="labelForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Color de texto</mat-label>
+        <input
+          matInput
+          type="color"
+          formControlName="text"
+          class="cursor-pointer"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Color de fondo</mat-label>
+        <input
+          matInput
+          type="color"
+          formControlName="background"
+          class="cursor-pointer"
+        />
+      </mat-form-field>
+      <div class="mt-4">
+        <span
+          class="w-2/3 inline-block rounded-full px-2 py-1 ml-1 text-xs font-bold mr-1 md:mr-2 mb-2 opacity-80 hover:opacity-100 cursor-default text-center"
+          [ngStyle]="{
+            color: labelForm.controls.text.value,
+            background: labelForm.controls.background.value
+          }"
+        >
+          {{ labelForm.controls.name.value }}
+        </span>
+      </div>
+      <div class="md:mt-2">
+        <button
+          mat-flat-button
+          class="bg-purple-500 text-white"
+          (click)="createLabel()"
+          [disabled]="!labelForm.valid"
+        >
+          Crear
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Borrar datos del bloc -->
+  <div class="my-6">
+    <p class="text-lg underline">Borrar los datos de la aplicación</p>
+    <button mat-raised-button color="warn" (click)="openDeleteDialog()">
+      Borrar datos
+    </button>
+  </div>
+</div>

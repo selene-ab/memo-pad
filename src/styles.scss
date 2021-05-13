@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./../node_modules/tailwindcss/dist/tailwind.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: rgba(229, 231, 235, 0.5);
+}
+
+:focus {
+  outline: 0 !important;
+}

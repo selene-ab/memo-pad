@@ -1,0 +1,51 @@
+<div class="mx-4 md:mx-10 lg:mx-16">
+  <div class="flex flex-row items-center space-x-4 mb-2 md:mb-6">
+    <div
+      class="h-10 w-10 md:h-14 md:w-14 bg-yellow-200 rounded-full flex flex-shrink-0 justify-center items-center text-yellow-500 text-2xl font-mono"
+    >
+      i
+    </div>
+    <div class="mt-2 font-medium text-lg md:text-xl text-gray-700">
+      <p>Crea una nueva nota</p>
+    </div>
+  </div>
+
+  <form
+    class="grid grid-cols-2 md:grid-cols-1 gap-4 md:gap-2"
+    [formGroup]="noteForm"
+  >
+    <mat-form-field appearance="outline" class="md:w-2/5">
+      <mat-label>Nombre nota</mat-label>
+      <input matInput formControlName="name" />
+      <mat-icon matSuffix>thumb_up_off_alt</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="md:w-2/5">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="label">
+        <mat-option *ngFor="let label of labels" [value]="label.name">
+          {{ label.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <angular-editor
+      [config]="editorConfig"
+      class="w-full col-span-2 md:col-span-1"
+      formControlName="description"
+    ></angular-editor>
+  </form>
+
+  <div class="flex flex-row space-x-4 mt-6">
+    <button mat-raised-button class="bg-purple-500 text-white" mat-dialog-close>
+      Cancelar
+    </button>
+    <button
+      mat-raised-button
+      class="bg-purple-500 text-white"
+      (click)="saveNewNote()"
+      [mat-dialog-close]="true"
+    >
+      Crear
+    </button>
+  </div>
+</div>

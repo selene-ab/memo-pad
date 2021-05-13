@@ -1,0 +1,37 @@
+<!-- Titulo y botones-->
+<div class="grid grid-cols-1 md:grid-cols-4 items-start">
+  <!-- Titulo -->
+  <div
+    class="md:mb-10 font-black uppercase text-xl md:text-2xl lg:text-4xl text-yellow-500 flex flex-row gap-2 md:col-span-3 cursor-default"
+  >
+    <p>Remembrall</p>
+
+    <img
+      src="assets/images/recordadora.png"
+      class="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10"
+    />
+    <p>- Tu block de notas</p>
+  </div>
+
+  <!-- Botones de nueva nota y ajustes -->
+  <div class="flex flex-row gap-2 lg:gap-4">
+    <button
+      mat-raised-button
+      class="bg-purple-500 text-white"
+      (click)="openNewNote()"
+    >
+      Nueva nota
+    </button>
+    <button
+      mat-raised-button
+      class="bg-purple-500 text-white"
+      [routerLink]="['/settings']"
+    >
+      Ajustes
+    </button>
+  </div>
+</div>
+
+<!--  Listado de notas a la izquierda, descripcion de la nota a la derecha -->
+
+<app-notes-list></app-notes-list>
