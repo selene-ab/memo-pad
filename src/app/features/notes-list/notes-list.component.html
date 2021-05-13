@@ -10,7 +10,22 @@
             </p>
             <!-- Label -->
             <span
-              class="inline-block rounded-full px-2 py-1 ml-1 text-xs font-bold mr-1 md:mr-2 mb-2 md:px-4 opacity-80 hover:opacity-100 cursor-default"
+              class="
+                inline-block
+                rounded-full
+                px-2
+                py-1
+                ml-1
+                text-xs
+                font-bold
+                mr-1
+                md:mr-2
+                mb-2
+                md:px-4
+                opacity-80
+                hover:opacity-100
+                cursor-default
+              "
               [ngStyle]="{
                 color: getTextColor(note.category),
                 background: getBgColor(note.category)
@@ -40,7 +55,7 @@
 <!-- Si no hay notas creadas. -->
 <div class="mt-12" *ngIf="!userNotes">
   <p class="text-xl md:text-2xl font-semibold pb-6 text-center">
-    Tu bloc de notas está vacío ¡Empieza creando una ya!
+    Tu bloc de notas está vacio. ¡Crea tus etiquetas y comienza a escribir!
   </p>
   <div class="mx-16 md:mx-32 lg:mx-52">
     <img src="assets/images/list.png" />

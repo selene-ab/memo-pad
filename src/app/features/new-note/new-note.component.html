@@ -1,7 +1,19 @@
 <div class="mx-4 md:mx-10 lg:mx-16">
   <div class="flex flex-row items-center space-x-4 mb-2 md:mb-6">
     <div
-      class="h-10 w-10 md:h-14 md:w-14 bg-yellow-200 rounded-full flex flex-shrink-0 justify-center items-center text-yellow-500 text-2xl font-mono"
+      class="
+        h-10
+        w-10
+        md:h-14
+        md:w-14
+        bg-yellow-200
+        rounded-full
+        flex flex-shrink-0
+        justify-center
+        items-center
+        text-yellow-500 text-2xl
+        font-mono
+      "
     >
       i
     </div>
@@ -26,6 +38,7 @@
         <mat-option *ngFor="let label of labels" [value]="label.name">
           {{ label.name }}
         </mat-option>
+        <mat-hint>Primero crea tus etiquetas en los ajustes</mat-hint>
       </mat-select>
     </mat-form-field>
     <angular-editor
