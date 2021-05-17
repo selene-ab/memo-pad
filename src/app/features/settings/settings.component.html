@@ -15,7 +15,23 @@
     <p class="text-lg underline">Categorias</p>
     <div class="grid grid-cols-3 md:w-2/5">
       <span
-        class="text-center inline-block rounded-full px-2 py-1 ml-1 text-xs font-bold mr-1 md:mr-2 mb-2 md:px-4 opacity-80 hover:opacity-100 cursor-default"
+        class="
+          text-center
+          inline-block
+          rounded-full
+          px-2
+          py-1
+          ml-1
+          text-xs
+          font-bold
+          mr-1
+          md:mr-2
+          mb-2
+          md:px-4
+          opacity-80
+          hover:opacity-100
+          cursor-default
+        "
         *ngFor="let label of labels"
         [ngStyle]="{ color: label.text_color, background: label.color }"
       >
@@ -27,7 +43,10 @@
   <!-- Crear categorias -->
   <div class="my-6">
     <p class="text-lg underline">Crear categoria</p>
-    <form class="grid grid-cols-5 gap-6" [formGroup]="labelForm">
+    <form
+      class="grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-6"
+      [formGroup]="labelForm"
+    >
       <mat-form-field appearance="outline">
         <mat-label>Nombre</mat-label>
         <input matInput type="text" formControlName="name" />
@@ -52,7 +71,23 @@
       </mat-form-field>
       <div class="mt-4">
         <span
-          class="w-2/3 inline-block rounded-full px-2 py-1 ml-1 text-xs font-bold mr-1 md:mr-2 mb-2 opacity-80 hover:opacity-100 cursor-default text-center"
+          class="
+            w-2/3
+            inline-block
+            rounded-full
+            px-2
+            py-1
+            ml-1
+            text-xs
+            font-bold
+            mr-1
+            md:mr-2
+            mb-2
+            opacity-80
+            hover:opacity-100
+            cursor-default
+            text-center
+          "
           [ngStyle]="{
             color: labelForm.controls.text.value,
             background: labelForm.controls.background.value
