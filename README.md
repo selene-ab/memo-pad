@@ -1,27 +1,45 @@
 # Memo-pad
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
+Single Page Applicacion creada usando Angular 11.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+SPA creada con el objetivo de ser tu bloc de notas personal.
 
-## Code scaffolding
+Tus notas serán guardadas en el navegador que estés utilizando usando la API de localStorage y podrás acceder a ellas siempre que quieras, modificar su contenido y deshacerte de ellas cuando ya no las necesites.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Demo
 
-## Build
+Accede a una demo online a través de Heroku: https://memo-pad-spa.herokuapp.com/home
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Ejecutar localmente
 
-## Running unit tests
+```
+git clone https://github.com/selene-ab/memo-pad.git
+cd memo-pad
+npm install
+npm start
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
 
-## Running end-to-end tests
+## Uso
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Comienza creando las etiquetas que te servirán para categorizar tus tareas/notas, a través del botón "ajustes" de la página principal:
 
-## Further help
+![Crear etiquetas.](https://imgur.com/yAup2e1.png "Crear etiquetas")
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Ahora ya puedes crear todas las notas que quieras pulsando el botón de "nueva nota":
+
+![Crear notas.](https://imgur.com/Ua42g1w.png "Crear notas")
+
+![Notas.](https://imgur.com/WFk5cOu.png "Notas")
+
+- Puedes editar las notas cuando quieras y borrarlas:
+
+![Editar nota.](https://imgur.com/PxjkSQ4.png "Editar nota")
+
+![Borrar nota.](https://imgur.com/b5QBGNI.png "Borrar nota")
+
+- También puedes borrar todos los datos de la aplicación desde los ajustes:
+
+![Borrar todo.](https://imgur.com/vp5LFpj.png "Borrar todo")
